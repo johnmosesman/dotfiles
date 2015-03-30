@@ -3,6 +3,11 @@ filetype off                  " required
 
 let mapleader = " "
 
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline_powerline_fonts = 1
+let &t_Co=256
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -23,6 +28,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'bling/vim-airline'
+Plugin 'tomasr/molokai'
+Plugin 'slim-template/vim-slim.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,11 +48,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax enable
-colorscheme grb256
+set background=dark
+colorscheme molokai 
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber
-set number
+" set number
 set hls
 
 set nobackup
@@ -55,12 +64,20 @@ set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch
 
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-
 " automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
+augroup vimresizing
+  autocmd!
+  autocmd VimResized * :wincmd =
+augroup END
+
+augroup commenting
+  autocmd!
+  autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+  autocmd FileType conf,fstab       let b:comment_leader = '# '
+  autocmd FileType vim              let b:comment_leader = '" '
+augroup END
 
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+nnoremap <C-w> <esc>:w<cr>

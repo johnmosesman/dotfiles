@@ -63,6 +63,10 @@ set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 
 " automatically rebalance windows on vim resize
 augroup vimresizing
@@ -80,4 +84,6 @@ augroup END
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
-nnoremap <C-w> <esc>:w<cr>
+
+nnoremap <C-s> <esc>:w <cr>
+inoremap <C-s> <esc>:w<cr>

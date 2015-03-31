@@ -31,6 +31,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'bling/vim-airline'
 Plugin 'tomasr/molokai'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -85,5 +86,5 @@ augroup END
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-nnoremap <C-s> <esc>:w <cr>
+nnoremap <C-s> <esc>:w<cr>
 inoremap <C-s> <esc>:w<cr>

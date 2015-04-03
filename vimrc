@@ -32,6 +32,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tomasr/molokai'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,5 +88,12 @@ augroup END
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-nnoremap <C-s> <esc>:w<cr>
+" vim panes
+nnoremap <C-w>q :q<cr>
+nnoremap <C-w>/ :vsp<cr> 
+nnoremap <C-w>- :sp<cr>
+
+nnoremap <C-s> :w<cr>
 inoremap <C-s> <esc>:w<cr>
+
+noremap <C-n> :NERDTreeToggle<cr>

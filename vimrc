@@ -2,7 +2,9 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 let mapleader = " "
-
+let g:ctrlp_show_hidden = 1
+let NERDTreeShowHidden=1
+let NERDTreeShowLineNumbers=1
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#fnamemod = ':t'
 "let g:airline_powerline_fonts = 1

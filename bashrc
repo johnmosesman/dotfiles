@@ -1,5 +1,7 @@
 export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules
 
+alias vim='/usr/local/Cellar/vim/7.4.488/bin/vim'
+
 alias gs="git status"
 alias ga="git add ."
 alias gcb="git checkout -b"
@@ -13,3 +15,4 @@ alias gb="git branch"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

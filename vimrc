@@ -36,6 +36,10 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+
+Bundle 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,7 +58,7 @@ filetype plugin indent on    " required
 
 syntax enable
 set background=dark
-colorscheme molokai 
+colorscheme molokai
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber
@@ -72,6 +76,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set mouse=nicr
+set backspace=indent,eol,start
 
 " automatically rebalance windows on vim resize
 augroup vimresizing
@@ -92,10 +98,20 @@ nnoremap <leader>= :wincmd =<cr>
 
 " vim panes
 nnoremap <C-w>q :q<cr>
-nnoremap <C-w>/ :vsp<cr> 
+nnoremap <C-w>/ :vsp<cr>
 nnoremap <C-w>- :sp<cr>
 
 nnoremap <C-s> :w<cr>
 inoremap <C-s> <esc>:w<cr>
 
 noremap <C-n> :NERDTreeToggle<cr>
+
+" Remove trailing whitespace on save
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()

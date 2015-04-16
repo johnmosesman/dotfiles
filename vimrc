@@ -5,9 +5,7 @@ let mapleader = " "
 let g:ctrlp_show_hidden = 1
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline_powerline_fonts = 1
+let g:NERDTreeHijackNetrw=0
 let &t_Co=256
 
 " set the runtime path to include Vundle and initialize
@@ -28,9 +26,7 @@ Plugin 'tpope/vim-fugitive'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
 Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'bling/vim-airline'
 Plugin 'tomasr/molokai'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
@@ -92,6 +88,11 @@ augroup commenting
   autocmd FileType vim              let b:comment_leader = '" '
 augroup END
 
+augroup remove_whitespace_on_save
+  autocmd!
+  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+augroup END
+
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
@@ -113,5 +114,3 @@ fun! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()

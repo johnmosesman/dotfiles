@@ -8,6 +8,8 @@ let NERDTreeShowLineNumbers=1
 let g:NERDTreeHijackNetrw=0
 let &t_Co=256
 
+runtime macros/matchit.vim
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -25,6 +27,16 @@ Bundle 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'osyo-manga/vim-over'
+Bundle 'tpope/vim-rails'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-user'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -37,6 +49,16 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-t>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
+
 
 syntax enable
 set background=dark
@@ -62,7 +84,7 @@ set mouse=nicr
 set backspace=indent,eol,start
 
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep --ignore-dir=.git --ignore-dir=log'
 endif
 
 " automatically rebalance windows on vim resize
@@ -92,10 +114,18 @@ nnoremap <C-w>q :q<cr>
 nnoremap <C-w>/ :vsp<cr>
 nnoremap <C-w>- :sp<cr>
 
+" Save
 nnoremap <C-s> :w<cr>
 inoremap <C-s> <esc>:w<cr>
 
+" Toggles NerdTree file structure
 noremap <C-n> :NERDTreeToggle<cr>
+
+" Search in project
+nnoremap <C-f> :Ack   . <Left><Left><Left><Left>
+
+" Search and replace
+nnoremap s :OverCommandLine<cr> %s/
 
 " Remove trailing whitespace on save
 fun! <SID>StripTrailingWhitespaces()

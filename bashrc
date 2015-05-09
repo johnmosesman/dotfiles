@@ -3,6 +3,7 @@ export GIT_EDITOR=vim
 
 alias vim='/usr/local/Cellar/vim/7.4.488/bin/vim'
 alias b='bundle'
+alias b='bundle install'
 alias be='bundle exec'
 alias gs="git status"
 alias ga="git add ."

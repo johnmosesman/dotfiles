@@ -5,6 +5,10 @@ gt - go to definition/file
 ]], [[ - moves between classes
 V - visual select the whole line
 
+zz - move current line to middle of screen
+zt - move current line to top of screen
+zb - move current line to bottom of screen
+
 var - select around ruby block
 vir - select in ruby block
 vim - select in method
@@ -22,3 +26,6 @@ iM - inside Class
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 ```
+
+## Write all tmux settings to a file
+`tmux show -g | cat > tmux_config_values.txt`

@@ -6,7 +6,22 @@ let g:ctrlp_show_hidden = 1
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let g:NERDTreeHijackNetrw=0
-let &t_Co=256
+let t_Co=256
+
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-t>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 
 runtime macros/matchit.vim
 
@@ -31,6 +46,8 @@ Plugin 'osyo-manga/vim-over'
 Bundle 'tpope/vim-rails'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
+Plugin 'matchit.zip'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -50,19 +67,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-t>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-
-
 syntax enable
-set background=dark
-colorscheme molokai
+"set background=dark
+colorscheme heroku-terminal
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber

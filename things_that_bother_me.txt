@@ -1,0 +1,3 @@
+Don't search certain folders (/tmp) with Ack
+When creating new vim pane move cursor to that pane
+Refresh ctrlp filelist on add file

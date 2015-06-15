@@ -16,7 +16,9 @@ alias gpo="git pull origin"
 alias gp="git pull"
 alias gpu="git push"
 alias gb="git branch"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/bin/elixir/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -9,10 +9,12 @@ let g:NERDTreeHijackNetrw=0
 let t_Co=256
 
 let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_exit_from_visual_mode=0
+let g:multi_cursor_exit_from_insert_mode=0
 let g:multi_cursor_next_key='<C-m>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_quit_key='<esc>'
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -117,7 +119,7 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 " vim panes
-nnoremap <C-w>q :q<cr>
+nnoremap <C-w>w :q<cr>
 nnoremap <C-w>/ :vsp<cr>
 nnoremap <C-w>- :sp<cr>
 

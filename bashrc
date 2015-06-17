@@ -1,10 +1,18 @@
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/bin/elixir/bin:$PATH"
+
 export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules
 export GIT_EDITOR=vim
 
-alias vim='/usr/local/Cellar/vim/7.4.488/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
+alias tat='tat.sh'
+
 alias b='bundle'
 alias b='bundle install'
 alias be='bundle exec'
+
 alias gs="git status"
 alias ga="git add ."
 alias gcb="git checkout -b"
@@ -17,8 +25,9 @@ alias gp="git pull"
 alias gpu="git push"
 alias gb="git branch"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/usr/local/bin/elixir/bin:$PATH"
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+bind -r '\C-s'
+stty -ixon
+
+eval "$(rbenv init -)"

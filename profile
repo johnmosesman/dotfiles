@@ -1,11 +1,3 @@
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-
-# C2C
-eval "$($HOME/Code/c2c/bin/c2c init -)"
-
-# Rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }

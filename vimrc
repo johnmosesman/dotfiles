@@ -16,6 +16,8 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<esc>'
 
+let g:mustache_abbreviations = 1
+
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 "let g:UltiSnipsExpandTrigger="<c-t>"
@@ -50,6 +52,7 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Plugin 'matchit.zip'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -114,6 +117,10 @@ augroup remove_whitespace_on_save
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 augroup END
 
+" Map to better comment-out
+nnoremap ,, :call NERDComment(0, "toggle")<CR>
+vnoremap ,, :call NERDComment(0, "toggle")<CR>
+
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
@@ -135,6 +142,12 @@ nnoremap <C-f> :Ack   . <Left><Left><Left><Left>
 
 " Search and replace
 nnoremap s :OverCommandLine<cr> %s/
+
+" Copy to the end of the line
+nnoremap Y y$
+
+" Clear search highlight
+nnoremap // :set nohls<cr>
 
 " Remove trailing whitespace on save
 fun! <SID>StripTrailingWhitespaces()

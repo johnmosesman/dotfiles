@@ -2,6 +2,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin/elixir/bin:$PATH"
+export PATH="$HOME/.node/bin:$PATH"
 
 export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules
 export GIT_EDITOR=vim
@@ -24,6 +25,13 @@ alias gpo="git pull origin"
 alias gp="git pull"
 alias gpu="git push"
 alias gb="git branch"
+
+alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
+
+alias stagec="heroku run rails c -r staging"
+alias prodc="heroku run rails c -r production"
+alias stagelog="heroku logs --tail -r staging"
+alias prodlog="heroku logs --tail -r production"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

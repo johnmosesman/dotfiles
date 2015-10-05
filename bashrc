@@ -18,6 +18,7 @@ alias gs="git status"
 alias ga="git add ."
 alias gcb="git checkout -b"
 alias gc="git checkout"
+alias gcd="git checkout develop"
 alias gm="git commit -m"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
@@ -28,8 +29,11 @@ alias gb="git branch"
 
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
 
+alias devc="heroku run rails c -r development"
 alias stagec="heroku run rails c -r staging"
 alias prodc="heroku run rails c -r production"
+
+alias devlog="heroku logs --tail -r development"
 alias stagelog="heroku logs --tail -r staging"
 alias prodlog="heroku logs --tail -r production"
 

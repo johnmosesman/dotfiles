@@ -80,6 +80,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber
 set number
 set hls
+set list
 
 set nobackup
 set nowritebackup
@@ -156,3 +157,10 @@ fun! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
+
+" Rails Vim
+nnoremap <leader>1 :Emodel<cr>
+nnoremap <leader>2 :Econtroller<cr>
+nnoremap <leader>3 :Eunittest<cr>
+nnoremap <leader>4 :Efunctionaltest<cr>
+nnoremap <leader>5 :Eschema<cr>

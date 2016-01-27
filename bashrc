@@ -23,19 +23,27 @@ alias gm="git commit -m"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
 alias gpo="git pull origin"
+alias gpod="git pull origin develop"
 alias gp="git pull"
-alias gpu="git push"
+alias gpud="git push origin develop"
 alias gb="git branch"
 
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
+
+alias rt="rake test"
 
 alias devc="heroku run rails c -r development"
 alias stagec="heroku run rails c -r staging"
 alias prodc="heroku run rails c -r production"
 
 alias devlog="heroku logs --tail -r development"
+alias devlogs="heroku logs --tail -r development"
 alias stagelog="heroku logs --tail -r staging"
+alias stagelogs="heroku logs --tail -r staging"
 alias prodlog="heroku logs --tail -r production"
+alias prodlogs="heroku logs --tail -r production"
+
+alias dockerboot="bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

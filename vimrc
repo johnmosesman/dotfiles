@@ -135,11 +135,6 @@ vnoremap ,, :call NERDComment(0, "toggle")<CR>
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
-" vim panes
-nnoremap <C-w>w :q<cr>
-nnoremap <C-w>/ :vsp<cr>
-nnoremap <C-w>- :sp<cr>
-
 " Save
 nnoremap <C-s> :w<cr>
 inoremap <C-s> <esc>:w<cr>
@@ -173,6 +168,11 @@ nnoremap <leader>2 :Econtroller<cr>
 nnoremap <leader>3 :Eunittest<cr>
 nnoremap <leader>4 :Efunctionaltest<cr>
 nnoremap <leader>5 :Eschema<cr>
+
+" vim panes
+nnoremap <leader>w :q<cr>
+nnoremap <leader>/ :vsp<cr>
+nnoremap <leader>- :sp<cr>
 
 " https://github.com/janko-m/vim-test
 nmap <silent> <leader>t :TestNearest<CR>

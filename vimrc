@@ -18,6 +18,9 @@ let g:multi_cursor_quit_key='<esc>'
 
 let g:mustache_abbreviations = 1
 
+" make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
+
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 "let g:UltiSnipsExpandTrigger="<c-t>"
@@ -53,6 +56,8 @@ Bundle 'kana/vim-textobj-user'
 Plugin 'matchit.zip'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'janko-m/vim-test'
+Plugin 'tpope/vim-dispatch'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -80,7 +85,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber
 set number
 set hls
-set list
 
 set nobackup
 set nowritebackup
@@ -117,6 +121,8 @@ augroup remove_whitespace_on_save
   autocmd!
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 augroup END
+
+nnoremap ; :
 
 " Map to better comment-out
 nnoremap ,, :call NERDComment(0, "toggle")<CR>
@@ -164,3 +170,10 @@ nnoremap <leader>2 :Econtroller<cr>
 nnoremap <leader>3 :Eunittest<cr>
 nnoremap <leader>4 :Efunctionaltest<cr>
 nnoremap <leader>5 :Eschema<cr>
+
+" https://github.com/janko-m/vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>f :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>

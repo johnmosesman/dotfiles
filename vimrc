@@ -58,6 +58,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'janko-m/vim-test'
 Plugin 'tpope/vim-dispatch'
+Plugin 'nanotech/jellybeans.vim'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -79,7 +80,7 @@ filetype plugin indent on    " required
 
 syntax enable
 "set background=dark
-colorscheme heroku-terminal
+colorscheme jellybeans
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber

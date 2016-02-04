@@ -38,7 +38,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tomasr/molokai'
@@ -51,13 +50,16 @@ Plugin 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'osyo-manga/vim-over'
 Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-endwise'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Plugin 'matchit.zip'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'janko-m/vim-test'
-Plugin 'tpope/vim-dispatch'
 Plugin 'nanotech/jellybeans.vim'
 
 " Track the engine.

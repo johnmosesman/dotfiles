@@ -54,6 +54,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-bundler'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Plugin 'matchit.zip'
@@ -132,7 +133,7 @@ nnoremap ,, :call NERDComment(0, "toggle")<CR>
 vnoremap ,, :call NERDComment(0, "toggle")<CR>
 
 " zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>` :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 " Save
@@ -166,7 +167,7 @@ endfun
 nnoremap <leader>1 :Emodel<cr>
 nnoremap <leader>2 :Econtroller<cr>
 nnoremap <leader>3 :Eunittest<cr>
-nnoremap <leader>4 :Efunctionaltest<cr>
+nnoremap <leader>4 :A<cr>
 nnoremap <leader>5 :Eschema<cr>
 
 " vim panes

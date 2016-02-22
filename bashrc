@@ -26,6 +26,8 @@ alias gpo="git pull origin"
 alias gpod="git pull origin develop"
 alias gp="git pull"
 alias gpud="git push origin develop"
+alias gpuo="git push origin"
+alias gpudft="git push origin develop --follow-tags"
 alias gb="git branch"
 
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
@@ -44,6 +46,8 @@ alias prodlog="heroku logs --tail -r production"
 alias prodlogs="heroku logs --tail -r production"
 
 alias dockerboot="bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
+
+alias gitx="open -a GitX ."
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

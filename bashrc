@@ -4,7 +4,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin/elixir/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
-export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules
+export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules:$NODE_PATH:/Users/john/.node/lib/node_modules
+
 export GIT_EDITOR=vim
 
 alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
@@ -33,6 +34,9 @@ alias gb="git branch"
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
 
 alias rt="rake test"
+alias rdm="rake db:migrate"
+alias rdr="rake db:rollback"
+alias rdp="rake db:test:prepare"
 
 alias devc="heroku run rails c -r development"
 alias stagec="heroku run rails c -r staging"

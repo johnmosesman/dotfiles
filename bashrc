@@ -5,6 +5,7 @@ export PATH="/usr/local/bin/elixir/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
 export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules:$NODE_PATH:/Users/john/.node/lib/node_modules
+export GOPATH=$HOME/Documents/stupid_go
 
 export GIT_EDITOR=vim
 
@@ -29,14 +30,19 @@ alias gp="git pull"
 alias gpud="git push origin develop"
 alias gpuo="git push origin"
 alias gpudft="git push origin develop --follow-tags"
+alias gpus="git push origin staging"
+alias gpusft="git push origin staging --follow-tags"
+alias gpum="git push origin master"
+alias gpumft="git push origin master --follow-tags"
 alias gb="git branch"
 
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
 
-alias rt="rake test"
-alias rdm="rake db:migrate"
-alias rdr="rake db:rollback"
-alias rdp="rake db:test:prepare"
+alias ber="bundle exec rake"
+alias rt="bundle exec rake test"
+alias rdm="bundle exec rake db:migrate"
+alias rdr="bundle exec rake db:rollback"
+alias rdp="bundle exec rake db:test:prepare"
 
 alias devc="heroku run rails c -r development"
 alias stagec="heroku run rails c -r staging"

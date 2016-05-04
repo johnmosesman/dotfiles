@@ -62,6 +62,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'janko-m/vim-test'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'avdgaag/vim-phoenix'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -181,3 +183,6 @@ nmap <silent> <leader>f :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" Put in dat pry
+nmap <leader>p o binding.pry <esc>:w<cr>

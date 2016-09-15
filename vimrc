@@ -165,6 +165,14 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
+fun! Paste()
+  set paste
+  :exe "normal \<D-v>"
+  set nopaste
+endfun
+
+nnoremap <D-v> :call Paste()<cr>
+
 " Rails Vim
 nnoremap <leader>1 :Emodel<cr>
 nnoremap <leader>2 :Econtroller<cr>
@@ -185,4 +193,4 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
 " Put in dat pry
-nmap <leader>p o binding.pry <esc>:w<cr>
+nmap <leader>p o byebug<esc>:w<cr>

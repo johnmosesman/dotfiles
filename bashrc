@@ -35,6 +35,7 @@ alias gpusft="git push origin staging --follow-tags"
 alias gpum="git push origin master"
 alias gpumft="git push origin master --follow-tags"
 alias gb="git branch"
+alias gr="git remote -v"
 
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
 
@@ -43,6 +44,7 @@ alias rt="bundle exec rake test"
 alias rdm="bundle exec rake db:migrate"
 alias rdr="bundle exec rake db:rollback"
 alias rdp="bundle exec rake db:test:prepare"
+alias rs="bundle exec rspec spec"
 
 alias devc="heroku run rails c -r development"
 alias stagec="heroku run rails c -r staging"
@@ -58,6 +60,8 @@ alias prodlogs="heroku logs --tail -r production"
 alias dockerboot="bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
 
 alias gitx="open -a GitX ."
+
+alias rbnev="rbenv"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

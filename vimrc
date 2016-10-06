@@ -146,7 +146,11 @@ inoremap <C-s> <esc>:w<cr>
 noremap <C-n> :NERDTreeToggle<cr>
 
 " Search in project
-nnoremap <C-f> :Ack   . <Left><Left><Left><Left>
+nnoremap <C-f> :Ack  -Q . <Left><Left><Left><Left><Left><Left>
+
+" Indent and outdent
+nnoremap < <<
+nnoremap > >>
 
 " Search and replace
 nnoremap s :OverCommandLine<cr> %s/
@@ -165,13 +169,13 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
-fun! Paste()
-  set paste
-  :exe "normal \<D-v>"
-  set nopaste
-endfun
+"fun! Paste()
+  "set paste
+  ":exe "normal \<D-v>\<esc>"
+  "set nopaste
+"endfun
 
-nnoremap <D-v> :call Paste()<cr>
+"nnoremap <D-v> :call Paste()<cr>
 
 " Rails Vim
 nnoremap <leader>1 :Emodel<cr>

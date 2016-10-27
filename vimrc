@@ -84,8 +84,8 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax enable
-"set background=dark
-colorscheme jellybeans
+set background=dark
+colorscheme solarized
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber
@@ -105,6 +105,7 @@ set softtabstop=2
 set expandtab
 set mouse=nicr
 set backspace=indent,eol,start
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --ignore-dir=.git --ignore-dir=log'
@@ -171,7 +172,7 @@ endfun
 
 "fun! Paste()
   "set paste
-  ":exe "normal \<D-v>\<esc>"
+  ":exe \"normal \<D-v>\<esc>"
   "set nopaste
 "endfun
 

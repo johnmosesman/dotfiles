@@ -5,7 +5,7 @@ export PATH="/usr/local/bin/elixir/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
 export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules:$NODE_PATH:/Users/john/.node/lib/node_modules
-export GOPATH=$HOME/Documents/stupid_go
+export GOPATH=$HOME/go
 
 export GIT_EDITOR=vim
 
@@ -71,3 +71,6 @@ bind -r '\C-s'
 stty -ixon
 
 eval "$(rbenv init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

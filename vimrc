@@ -64,6 +64,9 @@ Plugin 'janko-m/vim-test'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'avdgaag/vim-phoenix'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'fatih/vim-go'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -147,7 +150,7 @@ inoremap <C-s> <esc>:w<cr>
 noremap <C-n> :NERDTreeToggle<cr>
 
 " Search in project
-nnoremap <C-f> :Ack  -Q . <Left><Left><Left><Left><Left><Left>
+nnoremap <C-f> :Ack   . <Left><Left><Left><Left>
 
 " Indent and outdent
 nnoremap < <<

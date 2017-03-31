@@ -12,6 +12,7 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let g:NERDTreeHijackNetrw=0
 let t_Co=256
+let g:syntastic_javascript_checkers = ['eslint']
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_exit_from_visual_mode=0
@@ -72,6 +73,7 @@ Plugin 'avdgaag/vim-phoenix'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
+Plugin 'vim-syntastic/syntastic'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'

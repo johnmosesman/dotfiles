@@ -10,6 +10,7 @@ export GOPATH=$HOME/go
 export GIT_EDITOR=vim
 
 alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
+alias vim=nvim
 alias tat='tat.sh'
 
 alias b='bundle'

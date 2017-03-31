@@ -1,6 +1,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Yay things are broken in nvim
+if has('nvim')
+  nmap <bs> :<c-u>TmuxNavigateLeft<cr>
+endif
+
 let mapleader = " "
 let g:ctrlp_show_hidden = 1
 let NERDTreeShowHidden=1

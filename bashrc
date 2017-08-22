@@ -4,13 +4,15 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin/elixir/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules:$NODE_PATH:/Users/john/.node/lib/node_modules
 export GOPATH=$HOME/go
 
 export GIT_EDITOR=vim
 
-alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
-alias vim=nvim
+#alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
+#alias vim=nvim
 alias tat='tat.sh'
 
 alias b='bundle'
@@ -52,6 +54,9 @@ alias rs="bundle exec rspec spec"
 alias devc="heroku run rails c -r development"
 alias stagec="heroku run rails c -r staging"
 alias prodc="heroku run rails c -r production"
+
+alias estagec="heroku run \"POOL_SIZE=1 iex -S mix\" -r staging"
+alias eprodc="heroku run \"POOL_SIZE=1 iex -S mix\" -r production"
 
 alias devlog="heroku logs --tail -r development"
 alias devlogs="heroku logs --tail -r development"

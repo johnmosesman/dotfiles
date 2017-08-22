@@ -1,18 +1,27 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Yay things are broken in nvim
-if has('nvim')
-  nmap <bs> :<c-u>TmuxNavigateLeft<cr>
-endif
-
 let mapleader = " "
+
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build'
+
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let g:NERDTreeHijackNetrw=0
 let t_Co=256
-let g:syntastic_javascript_checkers = ['eslint']
+
+
+" ESLint
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_exit_from_visual_mode=0
@@ -73,7 +82,7 @@ Plugin 'avdgaag/vim-phoenix'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -95,7 +104,7 @@ filetype plugin indent on    " required
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme PaperColor
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber
@@ -116,9 +125,10 @@ set expandtab
 set mouse=nicr
 set backspace=indent,eol,start
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set clipboard=unnamed
 
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep --ignore-dir=.git --ignore-dir=log'
+  let g:ackprg = 'ag --vimgrep --ignore-dir=.git --ignore-dir=log --ignore-dir=vendor'
 endif
 
 " automatically rebalance windows on vim resize

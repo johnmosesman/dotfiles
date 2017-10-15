@@ -11,18 +11,6 @@ let NERDTreeShowLineNumbers=1
 let g:NERDTreeHijackNetrw=0
 let t_Co=256
 
-
-" ESLint
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
@@ -32,6 +20,10 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<esc>'
 
 let g:mustache_abbreviations = 1
+
+" Airline plugin
+let g:airline#extensions#tabline#enabled = 1    " Enable the list of buffers
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " make test commands execute using dispatch.vim
 let test#strategy = "dispatch"
@@ -82,7 +74,8 @@ Plugin 'avdgaag/vim-phoenix'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
-"Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -110,7 +103,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set relativenumber
 set number
 set hls
-
+set laststatus=2  " Always show the status bar
 set nobackup
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
@@ -190,20 +183,17 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
-"fun! Paste()
-  "set paste
-  ":exe \"normal \<D-v>\<esc>"
-  "set nopaste
-"endfun
-
-"nnoremap <D-v> :call Paste()<cr>
-
-" Rails Vim
-nnoremap <leader>1 :Emodel<cr>
-nnoremap <leader>2 :Econtroller<cr>
-nnoremap <leader>3 :Eunittest<cr>
-nnoremap <leader>4 :A<cr>
-nnoremap <leader>5 :Eschema<cr>
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>[ <Plug>AirlineSelectPrevTab
+nmap <leader>] <Plug>AirlineSelectNextTab
 
 " vim panes
 nnoremap <leader>w :q<cr>
@@ -216,8 +206,5 @@ nmap <silent> <leader>f :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-
-" Put in dat pry
-nmap <leader>p o byebug<esc>:w<cr>
 
 map <leader>c :let @+ = expand("%")<cr>

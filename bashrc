@@ -3,10 +3,11 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin/elixir/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
+export PATH="/usr/local/Cellar/phantomjs/2.1.1/bin/:$PATH"
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-export NODE_PATH=/urs/local/lib/node:/usr/local/lib/node_modules:$NODE_PATH:/Users/john/.node/lib/node_modules
+export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules:$NODE_PATH:/Users/john/.node/lib/node_modules"
 export GOPATH=$HOME/go
 
 export GIT_EDITOR=vim
@@ -50,6 +51,11 @@ alias rdm="bundle exec rake db:migrate"
 alias rdr="bundle exec rake db:rollback"
 alias rdp="bundle exec rake db:test:prepare"
 alias rs="bundle exec rspec spec"
+
+alias mdg="mix deps.get"
+alias mem="mix ecto.migrate"
+alias mer="mix ecto.rollback"
+alias mps="iex -S mix phx.server"
 
 alias devc="heroku run rails c -r development"
 alias stagec="heroku run rails c -r staging"

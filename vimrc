@@ -4,7 +4,7 @@ filetype off                  " required
 let mapleader = " "
 
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam\|deps\|_build'
 
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
@@ -22,8 +22,8 @@ let g:multi_cursor_quit_key='<esc>'
 let g:mustache_abbreviations = 1
 
 " Airline plugin
-let g:airline#extensions#tabline#enabled = 1    " Enable the list of buffers
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+"let g:airline#extensions#tabline#enabled = 1    " Enable the list of buffers
+"let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " make test commands execute using dispatch.vim
 let test#strategy = "dispatch"
@@ -74,8 +74,8 @@ Plugin 'avdgaag/vim-phoenix'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 
 " Track the engine.
 "Plugin 'SirVer/ultisnips'
@@ -194,6 +194,8 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>[ <Plug>AirlineSelectPrevTab
 nmap <leader>] <Plug>AirlineSelectNextTab
+
+nnoremap <leader>d :bd<cr>
 
 " vim panes
 nnoremap <leader>w :q<cr>

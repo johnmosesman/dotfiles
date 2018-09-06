@@ -42,6 +42,7 @@ alias gr="git remote -v"
 alias gclean="git clean -i"
 
 alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
+alias leboom="npm cache clean -f && bower cache clean && rm -rf node_modules bower_components dist tmp && yarn install && bower install"
 alias nb="npm i && bower i"
 
 alias ber="bundle exec rake"

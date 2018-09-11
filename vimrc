@@ -4,7 +4,7 @@ filetype off                  " required
 let mapleader = " "
 
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam\|deps\|_build'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam\|deps\|_build\|tmp\|dist\|bower_components|\log'
 
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
@@ -160,7 +160,7 @@ inoremap <C-s> <esc>:w<cr>
 noremap <C-n> :NERDTreeToggle<cr>
 
 " Search in project
-nnoremap <C-f> :Ack   . <Left><Left><Left><Left>
+nnoremap <C-f> :Ack -Q "" .<Left><Left><Left>
 
 " Indent and outdent
 nnoremap < <<

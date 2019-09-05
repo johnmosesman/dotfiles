@@ -1,5 +1,5 @@
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
+#export PATH="$HOME/.rbenv/bin:$PATH"
 #export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin/elixir/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
@@ -15,7 +15,7 @@ export GIT_EDITOR=vim
 
 #alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
 #alias vim=nvim
-alias tat='~/.dotfiles/bin/tat'
+alias tat='~/code/dotfiles/bin/tat'
 
 alias b='bundle'
 alias b='bundle install'
@@ -82,8 +82,21 @@ alias rbnev="rbenv"
 bind -r '\C-s'
 stty -ixon
 
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+HOMEBREW_PREFIX=$(brew --prefix)
+if type brew &>/dev/null; then
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
+. /usr/local/opt/asdf/asdf.sh

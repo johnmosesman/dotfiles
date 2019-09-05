@@ -6,7 +6,7 @@ task :install do
   puts Dir['~/']
   Dir['*'].each do |file|
     next if %w[Rakefile README.rdoc LICENSE id_dsa.pub].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
         replace_file(file)
@@ -39,6 +39,18 @@ task :install do
   # system %Q{sudo mv /etc/zshenv /etc/zshrc}
 
   system %Q{mkdir ~/.tmp}
+end
+
+desc "copies colors to ~/.vim/colors"
+task :copy_colors do
+  system %Q{cp -r "colors/" "$HOME/.vim/colors"}
+end
+
+desc "installs other needed packages for tmux and such"
+task :install_others do
+  system %Q{brew install fzf}
+  system %Q{brew install reattach-to-user-namespace}
+  system %Q{brew cask install rowanj-gitx}
 end
 
 def replace_file(file)

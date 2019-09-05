@@ -1,2 +1,0 @@
-- fzf
-- reattach-to-user-namespace

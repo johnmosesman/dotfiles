@@ -3,3 +3,5 @@
 --ignore-dir=dist/
 --ignore-dir=log/
 --ignore-dir=vendor/
+--ignore-file=yarn.lock
+--ignore-file=package-lock.json

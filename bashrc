@@ -15,7 +15,7 @@ export GIT_EDITOR=vim
 
 #alias vim='/usr/local/Cellar/vim/7.4.712/bin/vim'
 #alias vim=nvim
-alias tat='~/dotfiles/bin/tat'
+alias tat='~/.dotfiles/bin/tat'
 
 alias b='bundle'
 alias b='bundle install'

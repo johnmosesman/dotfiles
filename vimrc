@@ -74,6 +74,7 @@ Plugin 'avdgaag/vim-phoenix'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
+Plugin 'leafgarland/typescript-vim'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 

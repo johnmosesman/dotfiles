@@ -51,6 +51,8 @@ task :install_others do
   system %Q{brew install fzf}
   system %Q{brew install reattach-to-user-namespace}
   system %Q{brew cask install rowanj-gitx}
+  system %Q{brew install postgresql}
+  system %Q{brew services start postgresql}
 end
 
 def replace_file(file)

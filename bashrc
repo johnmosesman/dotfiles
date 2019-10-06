@@ -1,5 +1,5 @@
 export PATH="$HOME/bin:$PATH"
-#export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 #export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin/elixir/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
@@ -82,7 +82,7 @@ alias rbnev="rbenv"
 bind -r '\C-s'
 stty -ixon
 
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -98,5 +98,3 @@ if type brew &>/dev/null; then
     done
   fi
 fi
-
-. /usr/local/opt/asdf/asdf.sh

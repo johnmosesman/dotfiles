@@ -4,7 +4,7 @@ filetype off                  " required
 let mapleader = " "
 
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam\|deps\|_build\|tmp\|dist\|bower_components|\log'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam\|deps\|_build\|tmp\|dist\|bower_components\|log\|.keep'
 
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1

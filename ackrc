@@ -2,6 +2,9 @@
 --ignore-dir=node_modules/
 --ignore-dir=dist/
 --ignore-dir=log/
+--ignore-dir=data/
 --ignore-dir=vendor/
+--ignore-dir=db/backup/
 --ignore-file=is:yarn.lock
 --ignore-file=is:package-lock.json
+

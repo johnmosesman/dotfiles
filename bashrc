@@ -77,6 +77,8 @@ alias gitx="open -a GitX ."
 
 alias rbnev="rbenv"
 
+alias rdbt="RAILS_ENV=test rails db:drop db:create db:migrate"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 bind -r '\C-s'

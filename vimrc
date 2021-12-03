@@ -4,7 +4,7 @@ filetype off                  " required
 let mapleader = " "
 
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam\|deps\|_build\|tmp\|dist\|bower_components\|log\|.keep'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|ios\/build\|.beam\|deps\|_build\|tmp\|dist\|bower_components\|.keep'
 
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
@@ -20,6 +20,8 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<esc>'
 
 let g:mustache_abbreviations = 1
+
+let g:vim_svelte_plugin_load_full_syntax = 1
 
 " Airline plugin
 "let g:airline#extensions#tabline#enabled = 1    " Enable the list of buffers
@@ -75,6 +77,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
+"Plugin 'evanleck/vim-svelte'
+Plugin 'leafOfTree/vim-svelte-plugin'
+Plugin 'tomlion/vim-solidity'
+
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 
@@ -146,8 +152,8 @@ augroup END
 nnoremap ; :
 
 " Map to better comment-out
-nnoremap ,, :call NERDComment(0, "toggle")<CR>
-vnoremap ,, :call NERDComment(0, "toggle")<CR>
+nnoremap ,, :call nerdcommenter#Comment(0, "toggle")<CR>
+vnoremap ,, :call nerdcommenter#Comment(0, "toggle")<CR>
 
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>` :wincmd _<cr>:wincmd \|<cr>
@@ -168,7 +174,7 @@ nnoremap < <<
 nnoremap > >>
 
 " Search and replace
-nnoremap s :OverCommandLine<cr> %s/
+"nnoremap s :OverCommandLine<cr> %s/
 
 " Copy to the end of the line
 nnoremap Y y$
@@ -184,17 +190,17 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>[ <Plug>AirlineSelectPrevTab
-nmap <leader>] <Plug>AirlineSelectNextTab
+"nmap <leader>1 <Plug>AirlineSelectTab1
+"nmap <leader>2 <Plug>AirlineSelectTab2
+"nmap <leader>3 <Plug>AirlineSelectTab3
+"nmap <leader>4 <Plug>AirlineSelectTab4
+"nmap <leader>5 <Plug>AirlineSelectTab5
+"nmap <leader>6 <Plug>AirlineSelectTab6
+"nmap <leader>7 <Plug>AirlineSelectTab7
+"nmap <leader>8 <Plug>AirlineSelectTab8
+"nmap <leader>9 <Plug>AirlineSelectTab9
+"nmap <leader>[ <Plug>AirlineSelectPrevTab
+"nmap <leader>] <Plug>AirlineSelectNextTab
 
 nnoremap <leader>d :bd<cr>
 
@@ -202,6 +208,8 @@ nnoremap <leader>d :bd<cr>
 nnoremap <leader>w :q<cr>
 nnoremap <leader>/ :vsp<cr>
 nnoremap <leader>- :sp<cr>
+
+nnoremap <leader>p "+p<cr>
 
 " https://github.com/janko-m/vim-test
 nmap <silent> <leader>t :TestNearest<CR>

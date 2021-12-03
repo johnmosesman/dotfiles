@@ -100,3 +100,5 @@ if type brew &>/dev/null; then
     done
   fi
 fi
+
+eval "$(direnv hook bash)"

@@ -5,6 +5,9 @@
 --ignore-dir=data/
 --ignore-dir=vendor/
 --ignore-dir=db/backup/
+--ignore-dir=storage/
+--ignore-dir=public/packs/
+--ignore-dir=public/packs-test/
 --ignore-file=is:yarn.lock
 --ignore-file=is:package-lock.json
-
+--ignore-file=is:.byebug_history

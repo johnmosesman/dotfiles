@@ -17,14 +17,8 @@ merged_branches = merged_branches.lines.map(
 
 if merged_branches.any?
   merged_branches.each do |branch_name|
-    puts "delete merged branch '#{branch_name}' ? [Y/n]"
-    answer = gets
-    if answer.strip == "Y" || answer.strip == "y"
-      %x{git branch -D #{branch_name}}
-    else
-      puts "skipping #{branch_name}"
-    end
-    puts
+    %x{git branch -D #{branch_name}}
+    puts "Deleted branch '#{branch_name}'"
   end
 else
   puts "no merged branches found"

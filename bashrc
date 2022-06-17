@@ -2,9 +2,17 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 #export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin/elixir/bin:$PATH"
+export PATH="/usr/local/bin/$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 export PATH="/usr/local/Cellar/phantomjs/2.1.1/bin/:$PATH"
 export PATH="~/.dotfiles/bin/:$PATH"
+export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))
+
+export FLYCTL_INSTALL="/Users/john/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export PATH="$HOME/.daml/bin:$PATH"
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
@@ -102,3 +110,9 @@ if type brew &>/dev/null; then
 fi
 
 eval "$(direnv hook bash)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/john/google-cloud-sdk/path.bash.inc' ]; then . '/Users/john/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/john/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/john/google-cloud-sdk/completion.bash.inc'; fi

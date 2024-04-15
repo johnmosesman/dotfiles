@@ -116,3 +116,7 @@ if [ -f '/Users/john/google-cloud-sdk/path.bash.inc' ]; then . '/Users/john/goog
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/john/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/john/google-cloud-sdk/completion.bash.inc'; fi
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

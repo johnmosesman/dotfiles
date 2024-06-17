@@ -30,9 +30,13 @@ alias gpus="git push origin staging"
 alias gpusft="git push origin staging --follow-tags"
 alias gpum="git push origin main"
 alias gpumft="git push origin main --follow-tags"
+alias mm="gc staging && gpo staging && gc main && git merge staging --ff-only"
 alias gb="git branch"
 alias gr="git remote -v"
 alias gclean="git clean -i"
+
+alias dev="npm run dev"
+alias tst="npm run test"
 
 alias nombom="npm cache clear && rm -rf node_modules && npm install"
 

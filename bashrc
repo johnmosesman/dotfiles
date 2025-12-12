@@ -5,6 +5,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 export GIT_EDITOR=vim
 
@@ -30,6 +31,7 @@ alias gpus="git push origin staging"
 alias gpusft="git push origin staging --follow-tags"
 alias gpum="git push origin main"
 alias gpumft="git push origin main --follow-tags"
+alias gph="git push origin HEAD"
 alias mm="gc staging && gpo staging && gc main && git merge staging --ff-only"
 alias gb="git branch"
 alias gr="git remote -v"
@@ -48,6 +50,11 @@ alias rdr="bundle exec rake db:rollback"
 alias rdp="bundle exec rake db:test:prepare"
 alias rs="bundle exec rspec spec"
 alias rdbt="RAILS_ENV=test rails db:drop db:create db:migrate"
+
+alias nts="npx tsc -b"
+alias md="npx prisma migrate dev"
+
+alias claude="~/.local/bin/claude"
 
 alias stagec="heroku run rails c -r staging"
 alias prodc="heroku run rails c -r production"
@@ -83,3 +90,4 @@ if type brew &>/dev/null; then
 fi
 
 eval "$(direnv hook bash)"
+eval "$(rbenv init -)"
